@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<main>
+
+    <script>
+        var totalp = 0;
+        var totalc = 0;
+        function playRound(playerSelection, computerSelection) {
+            var playerSelection = playerSelection.toLowerCase();
+            if (playerSelection === computerSelection){
+                console.log(playerSelection, computerSelection);
+
+                return 2
+            }
+            else if (playerSelection === "rock" && computerSelection === "scissor"){
+                console.log(playerSelection, computerSelection);
+                return 1
+            }
+            else if (playerSelection === "paper" && computerSelection === "rock"){
+                console.log(playerSelection, computerSelection);
+                return 1
+            }
+            else if (playerSelection === "scissor" && computerSelection === "paper"){
+                console.log(playerSelection, computerSelection);
+
+                return 1
+            }
+            else{
+                console.log(playerSelection, computerSelection);
+
+                return 0
+            }
+        }
+        function computerPlay(){
+            var random = Math.floor(Math.random() * 3);
+
+            if (random === 1){
+                return "rock"
+            }
+            else if (random === 2){
+                return "paper"
+            }
+            else{
+                return "scissor"
+            }
+        }
+
+        function winnerwinner(numret){
+            if (numret == 2){
+                console.log("tie")
+                return
+            }
+            else if( numret == 1){
+                console.log("player")
+                totalp += 1
+            }
+            else{
+                console.log("comp"
+                )
+                totalc += 1
+            }
+            
+            return
+        }
+        function game(){
+            const playerSelection = prompt("Rock paper scissor?");
+            var computerSelection = computerPlay();
+            winnerwinner(playRound(playerSelection, computerSelection));
+
+            const playerSelection2 = prompt("Rock paper scissor?");
+            var computerSelection = computerPlay();
+            winnerwinner(playRound(playerSelection2, computerSelection));
+
+            const playerSelection3 = prompt("Rock paper scissor?");
+            var computerSelection = computerPlay();
+            winnerwinner(playRound(playerSelection3, computerSelection));
+
+            const playerSelection4 = prompt("Rock paper scissor?");
+            var computerSelection = computerPlay();
+            winnerwinner(playRound(playerSelection4, computerSelection));
+
+            const playerSelection5 = prompt("Rock paper scissor?");
+            var computerSelection = computerPlay();
+            winnerwinner(playRound(playerSelection5, computerSelection));
+
+            if (totalc > totalp){
+                console.log("computer win")
+            }
+            else if (totalp > totalc){
+                console.log("player win")
+            }
+            else{
+                console.log("tie")
+            }
+        }
+
+        game()
+    </script>
+
+</main>
